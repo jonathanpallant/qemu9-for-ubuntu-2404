@@ -23,4 +23,3 @@ cd release
 ../configure --target-list=arm-softmmu --prefix=/opt/qemu
 make -j4
 make install
-tar cvzf qemu-9.2.3-ubuntu-24.04.tar.gz /opt/qemu

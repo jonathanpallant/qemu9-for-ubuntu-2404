@@ -17,7 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           ./build.sh
-      - name: Upload mdbook artifacts
+          tar cvzf qemu-9.2.3-ubuntu-24.04.tar.gz /opt/qemu
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: qemu-9.2.3-ubuntu-24.04.tar.gz
