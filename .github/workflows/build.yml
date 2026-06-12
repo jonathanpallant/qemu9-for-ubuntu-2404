@@ -14,12 +14,12 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: |
           ./build.sh
           tar cvzf qemu-10.2.2-ubuntu-24.04.tar.gz /opt/qemu
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: qemu-10.2.2-ubuntu-24.04.tar.gz
           path: qemu-10.2.2-ubuntu-24.04.tar.gz
@@ -27,7 +27,7 @@ jobs:
       - name: Create and Upload Release
         if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
         id: create_release
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1.21.0
         with:
           artifacts: qemu-10.2.2-ubuntu-24.04.tar.gz
           allowUpdates: true
