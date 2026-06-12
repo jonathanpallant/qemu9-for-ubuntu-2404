@@ -11,12 +11,12 @@ fi
 
 ${apt} update -y
 ${apt} install -y libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev ninja-build build-essential curl python3-venv linux-headers-generic
-if [ ! -d ./qemu-10.2.3 ]; then
-    curl -sSL -o qemu.tar.gz https://github.com/qemu/qemu/archive/refs/tags/v10.2.3.tar.gz
+if [ ! -d ./qemu-11.0.1 ]; then
+    curl -sSL -o qemu.tar.gz https://github.com/qemu/qemu/archive/refs/tags/v11.0.1.tar.gz
     tar xvzf qemu.tar.gz
     rm qemu.tar.gz
 fi
-cd qemu-10.2.3
+cd qemu-11.0.1
 rm -rf release
 mkdir release
 cd release
